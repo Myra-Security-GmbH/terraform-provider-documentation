@@ -142,13 +142,13 @@ Terraform will perform the following actions:
     }
 
 Plan: 0 to add, 1 to change, 0 to destroy.
-myrasec_redirect.redirect: Modifying... [id=1165628]
-myrasec_redirect.redirect: Modifications complete after 5s [id=1165628]
+myrasec_redirect.redirect: Modifying... [id=0000000]
+myrasec_redirect.redirect: Modifications complete after 5s [id=0000000]
 
 Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
 ```
 
-When you check the changes in the Myra application, you should see the updated `` value in the redirects overview page of the subdomain.
+When you check the changes in the Myra application, you should see the updated `source` value in the redirects overview page of the subdomain.
 
 You can check the data in the `tfstate` file, too. 
 
@@ -270,7 +270,8 @@ Next steps:
 [Manage rate limits](./ratelimits.md)  
 [Manage settings](./settings.md)  
 [Manage WAF rules](./waf_rules.md)  
-[Manage SSL certificates](./ssl_certificates.md)    
+[Manage SSL certificates](./ssl_certificates.md)  
+[Manage error pages](./error_pages.md)      
 
 ### Links
 [Redirect resource documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/resources/redirect)  

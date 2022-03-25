@@ -161,7 +161,8 @@ Next steps:
 [Manage rate limits](./ratelimits.md)  
 [Manage redirects](./redirects.md)  
 [Manage WAF rules](./waf_rules.md)  
-[Manage SSL certificates](./ssl_certificates.md)
+[Manage SSL certificates](./ssl_certificates.md)  
+[Manage error pages](./error_pages.md)  
 
 ### Links
 [Settings resource documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/resources/settings)
