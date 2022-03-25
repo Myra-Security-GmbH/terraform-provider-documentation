@@ -175,6 +175,7 @@ Next steps:
 [Manage settings](./settings.md)  
 [Manage redirects](./redirects.md)  
 [Manage WAF rules](./waf_rules.md)  
+[Manage error pages](./error_pages.md)    
 
 ### Links
 [SSL certificate resource documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/resources/ssl_certificate)  

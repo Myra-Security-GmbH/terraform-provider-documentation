@@ -17,4 +17,7 @@ The purpose of this documentation project is to show some scenarios about how to
 7. [Manage settings](./docs/settings.md)  
 8. [Manage redirects](./docs/redirects.md)  
 9. [Manage WAF rules](./docs/waf_rules.md)
-9. [Manage SSL certificates](./docs/ssl_certificates.md)
+10. [Manage SSL certificates](./docs/ssl_certificates.md)  
+11. [Manage error pages](./error_pages.md)  
+  
+  
