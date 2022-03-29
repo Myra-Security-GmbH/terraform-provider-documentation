@@ -195,6 +195,33 @@ myrasec_error_page.500: Destruction complete after 7s
 Apply complete! Resources: 0 added, 0 changed, 1 destroyed.
 ```
 
+## Importing an existing error page
+If you want to manage an error page that is already known by Myra (already created in the app or using the API), you can `import` this error page to your Terraform project.  
+To import an existing error page, you have to create a resource for this error page in your `error_pages.tf` file.
+
+Re-create an error page DNS in the Myra app, so you can import it.
+
+```hcl
+resource "myrasec_error_page" "www_example_com_500" {
+
+}
+```
+
+Importing an error page to your Terraform project requires the subdomain name and the error code of the error page you want to import.  
+
+Running `terraform import myrasec_error_page.www_example_com_500 www.example.com:500` will fetch the error page for the `500` error code, assigned to the subdomain with the name `www.example.com` from the Myra application and import it to your Terraform project (managed by the resource that you defined).  
+
+After importing this error page, you have to add the missing information to your resource, so that your infrastructure matches your configuration.
+
+```hcl
+resource "myrasec_error_page" "www_example_com_500" {
+    subdomain_name = myrasec_dns_record.www_example_com.name
+    error_code = 500
+    content = "<html><head><title>Error 500</title></head><body><h1>Error 500</h1></body></html>"
+}
+```
+
+
 ## Read an error page
 Terraform has resources and data sources. To only fetch information about a redirect (but not changing any information about this error page), you can define a data source and load the redirect to your `tfstate`.
 
