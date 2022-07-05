@@ -31,7 +31,7 @@ terraform {
   required_providers {
     myrasec = {
       source = "Myra-Security-GmbH/myrasec"
-      version = ">= 1.21"
+      version = ">= 1.43"
     }
   }
 }
@@ -46,9 +46,9 @@ The output on your console should look like this:
 Initializing the backend...
 
 Initializing provider plugins...
-- Finding myra-security-gmbh/myrasec versions matching ">= 1.21.0"...
-- Installing myra-security-gmbh/myrasec v1.21.1...
-- Installed myra-security-gmbh/myrasec v1.21.1 (self-signed, key ID 11AA111111A1A111)
+- Finding myra-security-gmbh/myrasec versions matching ">= 1.43.0"...
+- Installing myra-security-gmbh/myrasec v1.43.0...
+- Installed myra-security-gmbh/myrasec v1.43.0 (self-signed, key ID 11AA111111A1A111)
 
 Partner and community providers are signed by their developers.
 If you'd like to know more about provider signing, you can read about it here:
