@@ -6,7 +6,7 @@ To have a better structure in your Terraform project, create a new file `setting
 
 ## Prerequisite
 
-To manage settings, you need a domain and a subdomain (DNS record). You can create a new domain and DNS record, import existing ones or load existing ones as a data source as described in the [Manage domains documentation](./domains.md) and [Manage DNS records documentation](./dns_records.md).  
+To manage settings, you need a domain and a subdomain (DNS record). You can create a new domain and DNS record, import existing ones or load existing ones as a data source as described in the [Manage domains documentation](./domains.md) and [Manage DNS records documentation](./dns_records.md).
 
 
 ## Update settings
@@ -27,9 +27,9 @@ Executing `terraform plan` to check the changes, should output something similar
 myrasec_domain.example_com: Refreshing state... [id=0000000]
 myrasec_dns_record.www_example_com: Refreshing state... [id=0000000]
 
-Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:                                          
-  + create                                                                                                                                                                                                                                                                                              
-Terraform will perform the following actions:                                                                                                                                       
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+Terraform will perform the following actions:
 
   # myrasec_settings.settings will be created
   + resource "myrasec_settings" "settings" {
@@ -90,10 +90,10 @@ After validating the changes, please apply those changes using the `terraform ap
 
 ```
 myrasec_domain.example_com: Refreshing state... [id=0000000]
-myrasec_dns_record.www_example_com: Refreshing state... [id=0000000]                                                                                                                                                                           
-Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:                                          
-  + create   
-  
+myrasec_dns_record.www_example_com: Refreshing state... [id=0000000]
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
 Terraform will perform the following actions:
 
   # myrasec_settings.settings will be created
@@ -155,14 +155,13 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 
 **NOTE** In this example, there was no existing `myrasec_setting` resource in our state. On the first run, it will load all exising settings to the `tfstate`. When you change another setting, it will show less changes.
 
-Next steps:  
-[Manage cache settings](./cache_settings.md)  
-[Manage IP filters](./ip_filters.md)  
-[Manage rate limits](./ratelimits.md)  
-[Manage redirects](./redirects.md)  
-[Manage WAF rules](./waf_rules.md)  
-[Manage SSL certificates](./ssl_certificates.md)  
-[Manage error pages](./error_pages.md)  
+Next steps:
+[Manage cache settings](./cache_settings.md)
+[Manage IP filters](./ip_filters.md)
+[Manage redirects](./redirects.md)
+[Manage WAF rules](./waf_rules.md)
+[Manage SSL certificates](./ssl_certificates.md)
+[Manage error pages](./error_pages.md)
 
 ### Links
 [Settings resource documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/resources/settings)

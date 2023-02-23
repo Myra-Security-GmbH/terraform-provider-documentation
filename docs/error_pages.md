@@ -6,7 +6,7 @@ To have a better structure in your Terraform project, please create a new file `
 
 ## Prerequisite
 
-To manage error pages, you need a domain and a subdomain (DNS record). You can create a new domain and DNS record, import existing ones or load existing ones as a data source as described in the [Manage domains documentation](./domains.md) and [Manage DNS records documentation](./dns_records.md).  
+To manage error pages, you need a domain and a subdomain (DNS record). You can create a new domain and DNS record, import existing ones or load existing ones as a data source as described in the [Manage domains documentation](./domains.md) and [Manage DNS records documentation](./dns_records.md).
 
 ## Create a new error page
 To create a new error page, you have to add a new `resource` to the `error_pages.tf` file.
@@ -18,7 +18,7 @@ resource "myrasec_error_page" "500" {
 }
 ```
 
-**NOTE** Instead of `myrasec_dns_record.www_example_com.name` you could have used `"www.example.com"`. `myrasec_dns_record.www_example_com.name` will point to the existing DNS record resource with the (resource) name `www_example_com`. 
+**NOTE** Instead of `myrasec_dns_record.www_example_com.name` you could have used `"www.example.com"`. `myrasec_dns_record.www_example_com.name` will point to the existing DNS record resource with the (resource) name `www_example_com`.
 
 After saving the file, you can run `terraform plan` to see what Terraform will do:
 ```
@@ -76,7 +76,7 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 If you login to the Myra application, you can see the new created error page for this subdomain.
 
 ## Update an error page
-To update an error page, you have to change the values in the resource definition in your `.tf` file.  
+To update an error page, you have to change the values in the resource definition in your `.tf` file.
 As an example, you can modify the `content`. Please update the resource definition in the `error_pages.tf` file to look like this:
 ```hcl
 resource "myrasec_error_page" "500" {
@@ -134,11 +134,11 @@ Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
 
 When you check the changes in the Myra application, you should see the updated `content` value in the error pages overview page of the subdomain.
 
-You can check the data in the `tfstate` file, too. 
+You can check the data in the `tfstate` file, too.
 
 
 ## Delete an error page
-Deleting an error page is done by deleting the resource (a managed resource) for this record from the `.tf` file.  
+Deleting an error page is done by deleting the resource (a managed resource) for this record from the `.tf` file.
 When you remove the error page from your `error_pages.tf` file again (so the file is empty) and run `terraform plan`, you should get some output like this:
 ```
 myrasec_domain.example_com: Refreshing state... [id=0000000]
@@ -196,7 +196,7 @@ Apply complete! Resources: 0 added, 0 changed, 1 destroyed.
 ```
 
 ## Importing an existing error page
-If you want to manage an error page that is already known by Myra (already created in the app or using the API), you can `import` this error page to your Terraform project.  
+If you want to manage an error page that is already known by Myra (already created in the app or using the API), you can `import` this error page to your Terraform project.
 To import an existing error page, you have to create a resource for this error page in your `error_pages.tf` file.
 
 Re-create an error page DNS in the Myra app, so you can import it.
@@ -207,9 +207,9 @@ resource "myrasec_error_page" "www_example_com_500" {
 }
 ```
 
-Importing an error page to your Terraform project requires the subdomain name and the error code of the error page you want to import.  
+Importing an error page to your Terraform project requires the subdomain name and the error code of the error page you want to import.
 
-Running `terraform import myrasec_error_page.www_example_com_500 www.example.com:500` will fetch the error page for the `500` error code, assigned to the subdomain with the name `www.example.com` from the Myra application and import it to your Terraform project (managed by the resource that you defined).  
+Running `terraform import myrasec_error_page.www_example_com_500 www.example.com:500` will fetch the error page for the `500` error code, assigned to the subdomain with the name `www.example.com` from the Myra application and import it to your Terraform project (managed by the resource that you defined).
 
 After importing this error page, you have to add the missing information to your resource, so that your infrastructure matches your configuration.
 
@@ -235,16 +235,15 @@ data "myrasec_error_pages" "all" {
 ```
 Running `terraform apply` will add the data to your `tfstate`.
 
-Data sources in the `tfstate` have the mode `data` whereas resources have the mode `managed`.  
+Data sources in the `tfstate` have the mode `data` whereas resources have the mode `managed`.
 
-Next steps:  
-[Manage cache settings](./cache_settings.md)  
-[Manage IP filters](./ip_filters.md)  
-[Manage rate limits](./ratelimits.md)  
-[Manage settings](./settings.md)  
-[Manage WAF rules](./waf_rules.md)  
-[Manage SSL certificates](./ssl_certificates.md)    
+Next steps:
+[Manage cache settings](./cache_settings.md)
+[Manage IP filters](./ip_filters.md)
+[Manage settings](./settings.md)
+[Manage WAF rules](./waf_rules.md)
+[Manage SSL certificates](./ssl_certificates.md)
 
 ### Links
-[Redirect resource documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/resources/redirect)  
+[Redirect resource documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/resources/redirect)
 [Redirect setting data source documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/data-sources/redirects)

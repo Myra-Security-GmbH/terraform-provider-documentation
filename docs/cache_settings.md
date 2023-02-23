@@ -151,10 +151,10 @@ Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
 ```
 When you check the changes in the Myra application, you should see the updated `path` value in the cache settings overview page of the subdomain.
 
-You can check the data in the `tfstate` file, too. 
+You can check the data in the `tfstate` file, too.
 
 ## Delete a cache setting
-Deleting a cache setting is done by deleting the resource (a managed resource) for this record from the `.tf` file.  
+Deleting a cache setting is done by deleting the resource (a managed resource) for this record from the `.tf` file.
 When you remove the cache setting from your `cache_settings.tf` file again (so the file is empty) and run `terraform plan`, you should get some output like this:
 ```
 myrasec_domain.example_com: Refreshing state... [id=0000000]
@@ -279,15 +279,14 @@ Running `terraform apply` will add the data to your `tfstate`.
 
 Data sources in the `tfstate` have the mode `data` whereas resources have the mode `managed`.
 
-Next steps:  
-[Manage IP filters](./ip_filters.md)  
-[Manage rate limits](./ratelimits.md)  
-[Manage settings](./settings.md)  
-[Manage redirects](./redirects.md)  
-[Manage WAF rules](./waf_rules.md)  
-[Manage SSL certificates](./ssl_certificates.md)  
-[Manage error pages](./error_pages.md)  
+Next steps:
+[Manage IP filters](./ip_filters.md)
+[Manage settings](./settings.md)
+[Manage redirects](./redirects.md)
+[Manage WAF rules](./waf_rules.md)
+[Manage SSL certificates](./ssl_certificates.md)
+[Manage error pages](./error_pages.md)
 
 ### Links
-[Cache setting resource documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/resources/cache_setting)  
+[Cache setting resource documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/resources/cache_setting)
 [Cache setting data source documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/data-sources/cache_settings)

@@ -2,19 +2,19 @@
 
 ## Install Terraform
 
-In order to use Terraform, you have to install the Terraform CLI.  
+In order to use Terraform, you have to install the Terraform CLI.
 HashiCorp provides different installation options for different systems. Please have a look at the official [Terraform download page](https://www.terraform.io/downloads) for more details.
 
 
-Terraform offers a huge amount of [documentation](https://learn.hashicorp.com/terraform) and tutorials about different topics. 
+Terraform offers a huge amount of [documentation](https://learn.hashicorp.com/terraform) and tutorials about different topics.
 The purpose of this documentation is not about the basic usage of the Terraform CLI. Therefore, please have a look at ["Use the Command Line Interface"](https://learn.hashicorp.com/collections/terraform/cli).
 
 ## Prerequisite
-To be able to use the Myra Security Terraform Provider, you need an API key and an API secret.  
+To be able to use the Myra Security Terraform Provider, you need an API key and an API secret.
 You can manage your API keys and other profile settings in the Myra user management on your profile page. Please make sure to note and store those credentials in a secure location. Your API secret is visible only once in the moment when you create a new API key.
 
 ## Setup a new Terraform project
-Create a new directory for your `.tf` files. All files ending with `.tf` will be processed by Terraform. You can have multiple `.tf` files. Like this, you can split your configurations/resources/variables into multiple files.  
+Create a new directory for your `.tf` files. All files ending with `.tf` will be processed by Terraform. You can have multiple `.tf` files. Like this, you can split your configurations/resources/variables into multiple files.
 For now, please create a directory called `myra` containing a single `main.tf` file.
 
 ```
@@ -70,7 +70,7 @@ rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
 ```
 
-Now, you have a new Terraform project. To be able to communicate with Myra, you have to edit the `main.tf` file again and configure the provider to use your API key and your API secret.  
+Now, you have a new Terraform project. To be able to communicate with Myra, you have to edit the `main.tf` file again and configure the provider to use your API key and your API secret.
 
 Please add the following configuration below the `terraform {...}` block that defines which provider you use:
 

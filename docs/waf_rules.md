@@ -1,4 +1,4 @@
-# Manage WAF rules  
+# Manage WAF rules
 
 Using the Myra Security Terraform Provider it is easy to manage (create, read, update and delete) WAF rules.
 
@@ -6,18 +6,18 @@ To have a better structure in your Terraform project, create a new file `waf_rul
 
 ## Prerequisite
 
-To manage WAF rules, you need a domain and a subdomain (DNS record). You can create a new domain and DNS record, import existing ones or load existing ones as a data source as described in the [Manage domains documentation](./domains.md) and [Manage DNS records documentation](./dns_records.md).  
+To manage WAF rules, you need a domain and a subdomain (DNS record). You can create a new domain and DNS record, import existing ones or load existing ones as a data source as described in the [Manage domains documentation](./domains.md) and [Manage DNS records documentation](./dns_records.md).
 
 As a WAF rule has one or more conditions as well as one or more actions, you can load the available actions and conditions using a data provider.
 
-To load all available actions, you can use the `myrasec_waf_actions` data provider. 
+To load all available actions, you can use the `myrasec_waf_actions` data provider.
 ```hcl
 data "myrasec_waf_actions" "all" {
     filter {}
 }
 ```
 
-To load all available conditions, you can use the `myrasec_waf_conditions` data provider. 
+To load all available conditions, you can use the `myrasec_waf_conditions` data provider.
 ```hcl
 data "myrasec_waf_conditions" "all" {
     filter {}
@@ -50,7 +50,7 @@ resource "myrasec_waf_rule" "waf" {
 }
 ```
 
-**NOTE** Instead of `myrasec_dns_record.www_example_com.name` you could have used `"www.example.com"`. `myrasec_dns_record.www_example_com.name` will point to the existing DNS record resource with the (resource) name `www_example_com`.  
+**NOTE** Instead of `myrasec_dns_record.www_example_com.name` you could have used `"www.example.com"`. `myrasec_dns_record.www_example_com.name` will point to the existing DNS record resource with the (resource) name `www_example_com`.
 
 After saving the file, you can run `terraform plan` to see what Terraform will do:
 ```
@@ -107,16 +107,15 @@ Note: You didn't use the -out option to save this plan, so Terraform can't guara
 
 After checking this information, please run `terraform apply`.
 
-Next steps:  
-[Manage cache settings](./cache_settings.md)  
-[Manage IP filters](./ip_filters.md)  
-[Manage rate limits](./ratelimits.md)  
-[Manage settings](./settings.md)  
-[Manage redirects](./redirects.md)  
-[Manage SSL certificates](./ssl_certificates.md)  
-[Manage error pages](./error_pages.md)    
+Next steps:
+[Manage cache settings](./cache_settings.md)
+[Manage IP filters](./ip_filters.md)
+[Manage settings](./settings.md)
+[Manage redirects](./redirects.md)
+[Manage SSL certificates](./ssl_certificates.md)
+[Manage error pages](./error_pages.md)
 
 ### Links
-[WAF rule resource documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/resources/waf_rule)  
-[WAF actions data source documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/data-sources/waf_actions)  
+[WAF rule resource documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/resources/waf_rule)
+[WAF actions data source documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/data-sources/waf_actions)
 [WAF conditions data source documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/data-sources/waf_conditions)

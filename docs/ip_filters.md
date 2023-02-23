@@ -6,7 +6,7 @@ To have a better structure in your Terraform project, please create a new file `
 
 ## Prerequisite
 
-To manage IP filters, you need a domain and a subdomain (DNS record). You can create a new domain and DNS record, import existing ones or load existing ones as a data source as described in the [Manage domains documentation](./domains.md) and [Manage DNS records documentation](./dns_records.md).  
+To manage IP filters, you need a domain and a subdomain (DNS record). You can create a new domain and DNS record, import existing ones or load existing ones as a data source as described in the [Manage domains documentation](./domains.md) and [Manage DNS records documentation](./dns_records.md).
 
 ## Create a new IP filter
 To create a new IP filter, you have to add a new `resource` to the `ip_filters.tf` file.
@@ -19,7 +19,7 @@ resource "myrasec_ip_filter" "block_127_0_0_1" {
 }
 ```
 
-**NOTE** Instead of `myrasec_dns_record.www_example_com.name` you could have used `"www.example.com"`. `myrasec_dns_record.www_example_com.name` will point to the existing DNS record resource with the (resource) name `www_example_com`.  
+**NOTE** Instead of `myrasec_dns_record.www_example_com.name` you could have used `"www.example.com"`. `myrasec_dns_record.www_example_com.name` will point to the existing DNS record resource with the (resource) name `www_example_com`.
 
 After saving the file, please  run `terraform plan` to see what Terraform will do:
 ```
@@ -141,10 +141,10 @@ Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
 
 When you check the changes in the Myra application, you should see the updated `enabled` value in the IP filters overview page of the subdomain.
 
-You can also check the data in the `tfstate` file.  
+You can also check the data in the `tfstate` file.
 
 ## Delete an IP filter
-Deleting an IP filter is done by deleting the resource (a managed resource) for this record from the `.tf` file.    
+Deleting an IP filter is done by deleting the resource (a managed resource) for this record from the `.tf` file.
 When you remove the IP filter from your `ip_filters.tf` file again (so the file is empty) and run `terraform plan`, you should get some output like this:
 ```
 myrasec_domain.example_com: Refreshing state... [id=0000000]
@@ -206,10 +206,10 @@ Apply complete! Resources: 0 added, 0 changed, 1 destroyed.
 ```
 
 ## Importing an existing IP filter
-If you want to manage an IP filter that is already known by Myra (already created in the app or using the API), you can `import` this IP filter to your Terraform project.    
+If you want to manage an IP filter that is already known by Myra (already created in the app or using the API), you can `import` this IP filter to your Terraform project.
 To import an existing IP filter, you have to create a resource for this IP filter in your `ip_filters.tf` file.
 
-Re-create an IP filter in the Myra app so that you can import it.    
+Re-create an IP filter in the Myra app so that you can import it.
 Add the resource for this IP filter you want to import to your `ip_filters.tf` file:
 ```hcl
 resource "myrasec_ip_filter" "allow_127_0_0_1" {
@@ -257,15 +257,14 @@ Running `terraform apply` will add the data to your `tfstate`.
 
 Data sources in the `tfstate` have the mode `data` whereas resources have the mode `managed`.
 
-Next steps:  
-[Manage cache settings](./cache_settings.md)  
-[Manage rate limits](./ratelimits.md)  
-[Manage settings](./settings.md)  
-[Manage redirects](./redirects.md)  
-[Manage WAF rules](./waf_rules.md)  
-[Manage SSL certificates](./ssl_certificates.md)  
-[Manage error pages](./error_pages.md)    
+Next steps:
+[Manage cache settings](./cache_settings.md)
+[Manage settings](./settings.md)
+[Manage redirects](./redirects.md)
+[Manage WAF rules](./waf_rules.md)
+[Manage SSL certificates](./ssl_certificates.md)
+[Manage error pages](./error_pages.md)
 
 ### Links
-[IP filter resource documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/resources/ip_filter)  
+[IP filter resource documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/resources/ip_filter)
 [IP filters data source documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/data-sources/ip_filters)
