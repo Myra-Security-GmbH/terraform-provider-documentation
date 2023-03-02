@@ -6,7 +6,7 @@ To have a better structure in your Terraform project, create a new file `ssl_cer
 
 ## Prerequisite
 
-To manage SSL certificates, you need a domain and a subdomain (DNS record). You can create a new domain and DNS record, import existing ones or load existing ones as a data source as described in the [Manage domains documentation](./domains.md) and [Manage DNS records documentation](./dns_records.md).  
+To manage SSL certificates, you need a domain and a subdomain (DNS record). You can create a new domain and DNS record, import existing ones or load existing ones as a data source as described in the [Manage domains documentation](./domains.md) and [Manage DNS records documentation](./dns_records.md).
 
 ## Create a new SSL certificate
 To create a new SSL certificate, you have to add a new `resource` to the `ssl_certificates.tf` file.
@@ -29,7 +29,7 @@ MIIFGDCC...................
 EOT
 
   key = <<EOF
------BEGIN PRIVATE KEY-----  
+-----BEGIN PRIVATE KEY-----
 MIIEvwIB...................
 ...........................
 ...........................
@@ -38,7 +38,7 @@ MIIEvwIB...................
 EOF
 }
 ```
-**NOTE** Instead of `myrasec_domain.example_com.name` and `myrasec_dns_record.www_example_com.name` you could have used `"example.com"` and `"www.example.com"`, too. `myrasec_dns_record.www_example_com.name` will point to the existing DNS record resource with the (resource) name `www_example_com`. 
+**NOTE** Instead of `myrasec_domain.example_com.name` and `myrasec_dns_record.www_example_com.name` you could have used `"example.com"` and `"www.example.com"`, too. `myrasec_dns_record.www_example_com.name` will point to the existing DNS record resource with the (resource) name `www_example_com`.
 
 After saving the file, you can run `terraform plan` to see what Terraform will do:
 ```
@@ -70,7 +70,7 @@ Terraform will perform the following actions:
       + fingerprint          = (known after apply)
       + id                   = (known after apply)
       + key                  = <<-EOT
-            -----BEGIN PRIVATE KEY-----  
+            -----BEGIN PRIVATE KEY-----
             MIIEvwIB...................
             ...........................
             ...........................
@@ -124,7 +124,7 @@ Terraform will perform the following actions:
       + fingerprint          = (known after apply)
       + id                   = (known after apply)
       + key                  = <<-EOT
-            -----BEGIN PRIVATE KEY-----  
+            -----BEGIN PRIVATE KEY-----
             MIIEvwIB...................
             ...........................
             ...........................
@@ -168,15 +168,14 @@ Running `terraform apply` will add the data to your `tfstate`.
 
 Data sources in the `tfstate` have the mode `data` whereas resources have the mode `managed`
 
-Next steps:  
-[Manage cache settings](./cache_settings.md)  
-[Manage IP filters](./ip_filters.md)  
-[Manage rate limits](./ratelimits.md)  
-[Manage settings](./settings.md)  
-[Manage redirects](./redirects.md)  
-[Manage WAF rules](./waf_rules.md)  
-[Manage error pages](./error_pages.md)    
+Next steps:
+[Manage cache settings](./cache_settings.md)
+[Manage IP filters](./ip_filters.md)
+[Manage settings](./settings.md)
+[Manage redirects](./redirects.md)
+[Manage WAF rules](./waf_rules.md)
+[Manage error pages](./error_pages.md)
 
 ### Links
-[SSL certificate resource documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/resources/ssl_certificate)  
+[SSL certificate resource documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/resources/ssl_certificate)
 [SSL certificates data source documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/data-sources/ssl_certificates)

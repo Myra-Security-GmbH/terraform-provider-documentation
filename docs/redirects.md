@@ -6,7 +6,7 @@ To have a better structure in your Terraform project, please create a new file `
 
 ## Prerequisite
 
-To manage redirects, you need a domain and a subdomain (DNS record). You can create a new domain and DNS record, import existing ones or load existing ones as a data source as described in the [Manage domains documentation](./domains.md) and [Manage DNS records documentation](./dns_records.md).  
+To manage redirects, you need a domain and a subdomain (DNS record). You can create a new domain and DNS record, import existing ones or load existing ones as a data source as described in the [Manage domains documentation](./domains.md) and [Manage DNS records documentation](./dns_records.md).
 
 ## Create a new redirect
 To create a new redirect, you have to add a new `resource` to the `redirects.tf` file.
@@ -20,7 +20,7 @@ resource "myrasec_redirect" "redirect" {
 }
 ```
 
-**NOTE** Instead of `myrasec_dns_record.www_example_com.name` you could have used `"www.example.com"`. `myrasec_dns_record.www_example_com.name` will point to the existing DNS record resource with the (resource) name `www_example_com`. 
+**NOTE** Instead of `myrasec_dns_record.www_example_com.name` you could have used `"www.example.com"`. `myrasec_dns_record.www_example_com.name` will point to the existing DNS record resource with the (resource) name `www_example_com`.
 
 After saving the file, you can run `terraform plan` to see what Terraform will do:
 ```
@@ -88,7 +88,7 @@ Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 If you login to the Myra application, you can see the new created redirect for this subdomain.
 
 ## Update a redirect
-To update a redirect, you have to change the values in the resource definition in your `.tf` file.  
+To update a redirect, you have to change the values in the resource definition in your `.tf` file.
 As an example, you can change the `source` from `/index_old` to `/index`. Please update the resource definition in the `redirects.tf` file to look like this:
 ```hcl
 resource "myrasec_redirect" "redirect" {
@@ -150,11 +150,11 @@ Apply complete! Resources: 0 added, 1 changed, 0 destroyed.
 
 When you check the changes in the Myra application, you should see the updated `source` value in the redirects overview page of the subdomain.
 
-You can check the data in the `tfstate` file, too. 
+You can check the data in the `tfstate` file, too.
 
 
 ## Delete a redirect
-Deleting a redirect is done by deleting the resource (a managed resource) for this record from the `.tf` file.  
+Deleting a redirect is done by deleting the resource (a managed resource) for this record from the `.tf` file.
 When you remove the redirect from your `redirects.tf` file again (so the file is empty) and run `terraform plan`, you should get some output like this:
 ```
 myrasec_domain.example_com: Refreshing state... [id=0000000]
@@ -222,10 +222,10 @@ Apply complete! Resources: 0 added, 0 changed, 1 destroyed.
 ```
 
 ## Importing an existing redirect
-If you want to manage a redirect that is already known by Myra (already created in the app or using the API), you can `import` this redirect to your Terraform project.  
+If you want to manage a redirect that is already known by Myra (already created in the app or using the API), you can `import` this redirect to your Terraform project.
 To import an existing redirect, you have to create a resource for this redirect in your `redirects.tf` file.
 
-Re-create a redirect in the Myra app, so you can import it.  
+Re-create a redirect in the Myra app, so you can import it.
 Please add the resource for this redirect you want to import to your `redirects.tf` file:
 ```hcl
 resource "myrasec_redirect" "redirect_imported" {
@@ -262,17 +262,16 @@ data "myrasec_redirects" "all" {
 ```
 Running `terraform apply` will add the data to your `tfstate`.
 
-Data sources in the `tfstate` have the mode `data` whereas resources have the mode `managed`.  
+Data sources in the `tfstate` have the mode `data` whereas resources have the mode `managed`.
 
-Next steps:  
-[Manage cache settings](./cache_settings.md)  
-[Manage IP filters](./ip_filters.md)  
-[Manage rate limits](./ratelimits.md)  
-[Manage settings](./settings.md)  
-[Manage WAF rules](./waf_rules.md)  
-[Manage SSL certificates](./ssl_certificates.md)  
-[Manage error pages](./error_pages.md)      
+Next steps:
+[Manage cache settings](./cache_settings.md)
+[Manage IP filters](./ip_filters.md)
+[Manage settings](./settings.md)
+[Manage WAF rules](./waf_rules.md)
+[Manage SSL certificates](./ssl_certificates.md)
+[Manage error pages](./error_pages.md)
 
 ### Links
-[Redirect resource documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/resources/redirect)  
+[Redirect resource documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/resources/redirect)
 [Redirect setting data source documentation](https://registry.terraform.io/providers/Myra-Security-GmbH/myrasec/latest/docs/data-sources/redirects)
