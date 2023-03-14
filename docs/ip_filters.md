@@ -8,6 +8,11 @@ To have a better structure in your Terraform project, please create a new file `
 
 To manage IP filters, you need a domain and a subdomain (DNS record). You can create a new domain and DNS record, import existing ones or load existing ones as a data source as described in the [Manage domains documentation](./domains.md) and [Manage DNS records documentation](./dns_records.md).  
 
+You can create 3 different types of IP filters:
+* BLACKLIST
+* WHITELIST
+* WHITELIST_REQUEST_LIMITER
+
 ## Create a new IP filter
 To create a new IP filter, you have to add a new `resource` to the `ip_filters.tf` file.
 ```hcl
