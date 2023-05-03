@@ -166,7 +166,7 @@ Plan: 0 to add, 0 to change, 1 to destroy.
 Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.
 ```
 
-Running `terraform apply` will remove this DNS record from the Myra application:
+Running `terraform apply` will remove this error page from the Myra application:
 ```
 myrasec_domain.example_com: Refreshing state... [id=0000000]
 myrasec_dns_record.www_example_com: Refreshing state... [id=0000000]
@@ -199,7 +199,7 @@ Apply complete! Resources: 0 added, 0 changed, 1 destroyed.
 If you want to manage an error page that is already known by Myra (already created in the app or using the API), you can `import` this error page to your Terraform project.
 To import an existing error page, you have to create a resource for this error page in your `error_pages.tf` file.
 
-Re-create an error page DNS in the Myra app, so you can import it.
+Re-create an error page in the Myra app, so you can import it.
 
 ```hcl
 resource "myrasec_error_page" "www_example_com_500" {
@@ -223,7 +223,7 @@ resource "myrasec_error_page" "www_example_com_500" {
 
 
 ## Read an error page
-Terraform has resources and data sources. To only fetch information about a redirect (but not changing any information about this error page), you can define a data source and load the redirect to your `tfstate`.
+Terraform has resources and data sources. To only fetch information about a error page (but not changing any information about this error page), you can define a data source and load the error page to your `tfstate`.
 
 To read/"import" all your error pages as a data source, please create a data source definition in your `error_pages.tf` file like this:
 ```hcl

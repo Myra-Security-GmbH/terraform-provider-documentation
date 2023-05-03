@@ -18,3 +18,4 @@ The purpose of this documentation project is to show some scenarios about how to
 1. [Manage WAF rules](./docs/waf_rules.md)
 1. [Manage SSL certificates](./docs/ssl_certificates.md)
 1. [Manage error pages](./docs/error_pages.md)
+1. [Manage tags](./docs/tags.md)
