@@ -19,11 +19,11 @@ resource "myrasec_tag" "example_tag" {
 }
 ```
 Available types for the tag are:
-* CACHE
-* SETTINGS
-* WAF
+* [CACHE](./docs/tag_cache_settings.md)
+* [SETTINGS](./docs/tag_settings.md)
+* [WAF](./docs/tag_waf_rules.md)
 
-Available types for the assignments are, it's not possible to mix the types in one tag
+Available types for the assignments are, **it's not possible to mix the types in one tag**
 * DOMAIN
 * SUBDOMAIN
 
