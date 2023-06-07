@@ -33,52 +33,11 @@ Terraform will perform the following actions:
 
   # myrasec_settings.settings will be created
   + resource "myrasec_settings" "settings" {
-      + access_log                      = true
-      + antibot_post_flood              = false
-      + antibot_post_flood_threshold    = 540
-      + antibot_proof_of_work           = true
-      + antibot_proof_of_work_threshold = 1800
-      + balancing_method                = "round_robin"
-      + block_not_whitelisted           = false
-      + block_tor_network               = false
-      + cache_enabled                   = false
-      + cache_revalidate                = false
-      + cdn                             = false
-      + client_max_body_size            = 10
-      + diffie_hellman_exchange         = 2048
-      + enable_origin_sni               = true
-      + forwarded_for_replacement       = "X-Forwarded-For"
-      + hsts                            = false
-      + hsts_include_subdomains         = false
-      + hsts_max_age                    = 31536000
-      + hsts_preload                    = false
-      + http_origin_port                = 80
-      + id                              = (known after apply)
-      + ignore_nocache                  = false
-      + image_optimization              = true
-      + ipv6_active                     = true
       + limit_tls_version               = [
           + "TLSv1.2",
           + "TLSv1.3",
         ]
-      + log_format                      = "myra-combined-waf"
-      + monitoring_alert_threshold      = 300
-      + monitoring_send_alert           = false
-      + myra_ssl_header                 = false
       + only_https                      = true
-      + origin_connection_header        = "none"
-      + proxy_connect_timeout           = 60
-      + proxy_read_timeout              = 600
-      + request_limit_block             = "CAPTCHA"
-      + request_limit_level             = 6000
-      + request_limit_report            = false
-      + rewrite                         = false
-      + source_protocol                 = "same"
-      + spdy                            = true
-      + ssl_origin_port                 = 443
-      + subdomain_name                  = "www.example.com"
-      + waf_enable                      = false
-      + waf_policy                      = "allow"
     }
 
 Plan: 1 to add, 0 to change, 0 to destroy.
@@ -98,52 +57,11 @@ Terraform will perform the following actions:
 
   # myrasec_settings.settings will be created
   + resource "myrasec_settings" "settings" {
-      + access_log                      = true
-      + antibot_post_flood              = false
-      + antibot_post_flood_threshold    = 540
-      + antibot_proof_of_work           = true
-      + antibot_proof_of_work_threshold = 1800
-      + balancing_method                = "round_robin"
-      + block_not_whitelisted           = false
-      + block_tor_network               = false
-      + cache_enabled                   = false
-      + cache_revalidate                = false
-      + cdn                             = false
-      + client_max_body_size            = 10
-      + diffie_hellman_exchange         = 2048
-      + enable_origin_sni               = true
-      + forwarded_for_replacement       = "X-Forwarded-For"
-      + hsts                            = false
-      + hsts_include_subdomains         = false
-      + hsts_max_age                    = 31536000
-      + hsts_preload                    = false
-      + http_origin_port                = 80
-      + id                              = (known after apply)
-      + ignore_nocache                  = false
-      + image_optimization              = true
-      + ipv6_active                     = true
       + limit_tls_version               = [
           + "TLSv1.2",
           + "TLSv1.3",
         ]
-      + log_format                      = "myra-combined-waf"
-      + monitoring_alert_threshold      = 300
-      + monitoring_send_alert           = false
-      + myra_ssl_header                 = false
       + only_https                      = true
-      + origin_connection_header        = "none"
-      + proxy_connect_timeout           = 60
-      + proxy_read_timeout              = 600
-      + request_limit_block             = "CAPTCHA"
-      + request_limit_level             = 6000
-      + request_limit_report            = false
-      + rewrite                         = false
-      + source_protocol                 = "same"
-      + spdy                            = true
-      + ssl_origin_port                 = 443
-      + subdomain_name                  = "www.example.com"
-      + waf_enable                      = false
-      + waf_policy                      = "allow"
     }
 
 Plan: 1 to add, 0 to change, 0 to destroy.

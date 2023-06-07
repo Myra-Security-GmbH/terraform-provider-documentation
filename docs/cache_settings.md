@@ -188,7 +188,7 @@ Plan: 0 to add, 0 to change, 1 to destroy.
 Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.
 ```
 
-Running `terraform apply` will remove this DNS record from the Myra application:
+Running `terraform apply` will remove this cache setting from the Myra application:
 ```
 myrasec_domain.example_com: Refreshing state... [id=0000000]
 myrasec_dns_record.www_example_com: Refreshing state... [id=0000000]
