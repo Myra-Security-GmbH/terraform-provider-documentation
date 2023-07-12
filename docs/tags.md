@@ -13,7 +13,6 @@ resource "myrasec_tag" "example_tag" {
     type = "WAF"
     assignments {
         type = "DOMAIN"
-        title = "example.com"
         subdomain_name = "example.com"
     }
 }
@@ -48,7 +47,6 @@ Terraform will perform the following actions:
           + id             = (known after apply)
           + modified       = (known after apply)
           + subdomain_name = "example.com"
-          + title          = "example.com"
           + type           = "DOMAIN"
         }
     }
@@ -76,7 +74,6 @@ Terraform will perform the following actions:
           + id             = (known after apply)
           + modified       = (known after apply)
           + subdomain_name = "example.com"
-          + title          = "example.com"
           + type           = "DOMAIN"
         }
     }
@@ -102,7 +99,6 @@ resource "myrasec_tag" "example_tag" {
     type = "WAF"
     assignments {
         type = "SUBDOMAIN"
-        title = "www.example.com"
         subdomain_name = "www.example.com"
     }
 }
@@ -125,7 +121,6 @@ Terraform will perform the following actions:
           - id             = 0000000 -> null
           - modified       = "2023-05-03T11:32:10+02:00" -> null
           - subdomain_name = "example.com" -> null
-          - title          = "example.com" -> null
           - type           = "DOMAIN" -> null
         }
       + assignments {
@@ -133,7 +128,6 @@ Terraform will perform the following actions:
           + id             = (known after apply)
           + modified       = (known after apply)
           + subdomain_name = "www.example.com"
-          + title          = "www.example.com"
           + type           = "SUBDOMAIN"
         }
     }
@@ -166,7 +160,6 @@ Terraform will perform the following actions:
           - id             = 0000000 -> null
           - modified       = "2023-05-03T11:47:35+02:00" -> null
           - subdomain_name = "www.example.com." -> null
-          - title          = "www.example.com" -> null
           - type           = "SUBDOMAIN" -> null
         }
     }
@@ -194,7 +187,6 @@ resource "myrasec_tag" "tag_import" {
     type = "WAF"
     assignments {
         type = "DOMAIN"
-        title = "example.com"
         subdomain_name = "example.com"
     }
 }
