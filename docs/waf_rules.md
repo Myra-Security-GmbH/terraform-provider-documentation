@@ -52,6 +52,8 @@ resource "myrasec_waf_rule" "waf" {
 
 **NOTE** Instead of `myrasec_dns_record.www_example_com.name` you could have used `"www.example.com"`. `myrasec_dns_record.www_example_com.name` will point to the existing DNS record resource with the (resource) name `www_example_com`.
 
+**NOTE #2** The `sort` parameter has to be different for every WAF rule belonging to a specific subdomain - two of the WAF rules cannot share the same sort value.
+
 After saving the file, you can run `terraform plan` to see what Terraform will do:
 ```
 myrasec_domain.example_com: Refreshing state... [id=0000000]
